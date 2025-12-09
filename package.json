@@ -1,0 +1,26 @@
+{
+  "name": "@cadit-app/test-repo",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "types": "./dist/main.d.ts"
+    },
+    "./*": {
+      "import": "./dist/*.js",
+      "types": "./dist/*.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc main.ts --outDir dist --declaration --target ES2022 --module NodeNext --moduleResolution NodeNext --esModuleInterop --noCheck"
+  },
+  "peerDependencies": {
+    "manifold-3d": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
